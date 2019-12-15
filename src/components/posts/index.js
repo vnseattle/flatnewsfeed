@@ -1,83 +1,60 @@
 import React, { Component } from 'react'
+import Post from './post/index';
+import { connect } from 'react-redux';
+import axios from 'axios';
+import callAPI from './../../utils/apiCaller';
+import { fetchPosts } from './../../actions/index';
 
 class Posts extends Component{
 
+    constructor(props){
+        super(props);
+        this.state = {
+            posts: []
+        };
+    }
+
+    componentDidMount(){
+        callAPI('GetPostsNewsFeed.php?crid=0&tagid=0','GET',null).then(res => { 
+            this.props.fetchAllPosts(res.data)
+        })
+    }
+    
     render(){
+
+        var {posts} = this.props;
+        //var {posts} = this.state;
+
+        var arrPosts = posts.map( (post,i) =>  
+        <Post 
+            key= {i}
+            avatar={post.Thumb}
+            title={post.Author}
+            image={post.Thumb}
+            content={post.Intro} 
+        />);
 
         return (
             <div id="posts">
-          <div className="post"> 
-            <div className="post__head">
-              <div className="post__head__avatar">
-                  <img src='https://ffp4g1ylyit3jdyti1hqcvtb-wpengine.netdna-ssl.com/firefox/files/2017/12/firefox-logo-300x310.png' />
-              </div>
-
-              <div className="post__head__title">
-                  <div>Henry Nguyen</div>
-              </div>
+                {arrPosts}
             </div>
-
-            <div className="post__image">
-              <img src='https://ionicframework.com/docs/demos/api/card/madison.jpg' alt='noname' />
-            </div>
-
-            <div className="post__content">
-                <p>Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.</p>
-            </div>
-
-          </div>
-
-          <div className="post"> 
-            <div className="post__head">
-              <div className="post__head__avatar">
-                  <img src='https://ffp4g1ylyit3jdyti1hqcvtb-wpengine.netdna-ssl.com/firefox/files/2017/12/firefox-logo-300x310.png' />
-              </div>
-
-              <div className="post__head__title">
-                  <div>Henry Nguyen</div>
-              </div>
-            </div>
-
-            <div className="post__image">
-              <img src='https://ionicframework.com/docs/demos/api/card/madison.jpg' alt='noname' />
-            </div>
-
-            <div className="post__content">
-                <p>Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.</p>
-            </div>
-
-          </div>
-
-          <div className="post"> 
-            <div className="post__head">
-              <div className="post__head__avatar">
-                  <img src='https://ffp4g1ylyit3jdyti1hqcvtb-wpengine.netdna-ssl.com/firefox/files/2017/12/firefox-logo-300x310.png' />
-              </div>
-
-              <div className="post__head__title">
-                  <div>Henry Nguyen</div>
-              </div>
-            </div>
-
-            <div className="post__image">
-              <img src='https://ionicframework.com/docs/demos/api/card/madison.jpg' alt='noname' />
-            </div>
-
-            <div className="post__content">
-                <p>Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.</p>
-            </div>
-
-          </div>
-
-      </div>
-
-
-
         )
 
     }
-
-
 }
 
-export default Posts;
+const mapStateToProps = state =>{
+    return {
+        posts: state.posts
+    }
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        fetchAllPosts: (posts) => {
+            dispatch(fetchPosts(posts));
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Posts);
