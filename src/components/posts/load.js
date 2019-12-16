@@ -9,8 +9,35 @@ class Load extends Component{
         super(props);
         this.state = {
             posts: [],
-            isEnd: false
+            isEnd: false,
+            isScrolled: false
         };
+    }
+
+    componentWillMount(){
+        this.scrollListener = window.addEventListener('scroll',(e) => {
+            this.handleScroll(e);
+            this.setState({ isScrolling: true});
+        });
+    }
+
+    handleScroll = (e) => {
+        var {isScrolled} = this.state;
+
+        const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop
+
+        const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight
+        const scrolled = winScroll / height;
+        if((scrolled*100)>95 && !isScrolled){
+            this.setState({isScrolled:true});
+            this.LoadMore();
+        }
+        if((scrolled*100)>70 && (scrolled*100)<90  && isScrolled){
+            this.setState({isScrolled:false});
+        }
     }
 
     LoadMore = () => {
@@ -18,9 +45,7 @@ class Load extends Component{
         callAPI('GetPostsNewsFeed.php?crid='+posts[posts.length-1].Id+'&tagid=0').then(res => { 
                 this.props.fetchAllPosts(res.data);
                 if(res.data.length == 0){
-                    this.setState({
-                        isEnd: true
-                    })
+                    this.setState({ isEnd: true})
                 }
         })
     }
@@ -30,7 +55,7 @@ class Load extends Component{
         return (
             <div>
             {isEnd ? null: 
-            <div onClick={this.LoadMore}> Load More </div>
+            <div id='load' onClick={this.LoadMore}> Load More Ads </div>
             }
             </div>
         )

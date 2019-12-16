@@ -22,7 +22,7 @@ class Post extends Component{
         var {detail} = this.state;
          
         var isNoMsg = false;
-        var msg = detail ? detail[0].Message : '';
+        var msg = detail ? '☎ '+detail[0].Phone+'<br/>✉ '+detail[0].Email+'<br/>'+detail[0].Message : '';
         msg == '' ? isNoMsg=true : isNoMsg=false; 
         msg = msg.split('<br/>').map(function(item, key) {
           return (
