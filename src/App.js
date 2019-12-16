@@ -1,13 +1,11 @@
 import React from 'react';
-import Menu from './components/menu/index';
-import Posts from './components/posts/index';
+import Posts from './components/posts/';
 import './App.css';
 
 function App() {
   return (
     <div id="app">
-      <Menu />
-      <Posts/>
+      <Posts />
     </div>
   );
 }

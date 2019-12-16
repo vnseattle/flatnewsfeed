@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Post from './post/index';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import callAPI from './../../utils/callAPI';
 import { fetchPosts } from './../../actions/index';
 import LoadMore from './load';
 
 class Posts extends Component{
 
+    
     constructor(props){
         super(props);
         this.state = {
@@ -16,11 +16,14 @@ class Posts extends Component{
     }
 
     componentDidMount(){
-        callAPI('GetPostsNewsFeed.php?crid=0&tagid=0','GET',null).then(res => { 
-            this.props.fetchAllPosts(res.data);
-        })
+        var {posts} = this.props;
+        if(posts.length==0){
+            callAPI('GetPostsNewsFeed.php?crid=0&tagid=0','GET',null).then(res => { 
+                this.props.fetchAllPosts(res.data);
+            })
+        }
     }
-    
+
     render(){
 
         var {posts} = this.props;

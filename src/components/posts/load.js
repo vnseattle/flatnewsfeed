@@ -15,21 +15,33 @@ class Load extends Component{
         };
     }
 
-    componentWillMount(){
-        this.scrollListener = window.addEventListener('scroll',(e) => {
-            this.handleScroll();
-            this.setState({ isScrolling: true});
-        });
+    setScrolled(status){
+        if (this._isMounted) {
+            this.setState({
+                isScrolled: status
+            });
+          }
     }
+
+    componentWillMount(){
+        var {posts} = this.props;
+        if(posts.length==0){
+            this.scrollListener = window.addEventListener('scroll',(e) => {
+                this.handleScroll();
+            });
+        }
+    }
+
+   
 
     handleScroll = () => {
         var {isScrolled} = this.state;
         if(getScrolled()>95 && !isScrolled){
-            this.setState({isScrolled:true});
+            this.setScrolled(true);
             this.LoadMore();
         }
         if(getScrolled()>70 && getScrolled()<90  && isScrolled){
-            this.setState({isScrolled:false});
+            this.setScrolled(false);
         }
     }
 

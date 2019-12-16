@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
+import Posts from '../posts/';
+import Download from '../download/';
+import {BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 class Menu extends Component{
 
-    changeCategory = (categoryID) => {
-      
-    }
-
     render(){
         return(
-            <div id="menu">
-            <div className='menu__item' id="menu__list-all" onClick={() => this.changeCategory('1')} ><span>Home</span></div>
-            <div className='menu__item' id="menu__list-event" onClick={() => this.changeCategory('2')} ><span>Download</span></div>
+            <div>
+            <Router>
+                <div id="menu">
+                <NavLink to="/"  exact className='menu__item' id="menu__list-all" ><span>Home</span></NavLink>
+                <NavLink to="/download" exact className='menu__item' id="menu__list-event" ><span>Download</span></NavLink>
+                </div>
+                <Route path='/' exact component={Posts} />
+                <Route path='/download' exact component={Download} />
+            </Router>
             </div>
         )
     }
