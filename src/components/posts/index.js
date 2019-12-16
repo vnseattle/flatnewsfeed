@@ -4,39 +4,42 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import callAPI from './../../utils/apiCaller';
 import { fetchPosts } from './../../actions/index';
+import LoadMore from './load';
 
 class Posts extends Component{
 
     constructor(props){
         super(props);
         this.state = {
-            posts: []
+            posts: []        
         };
     }
 
     componentDidMount(){
         callAPI('GetPostsNewsFeed.php?crid=0&tagid=0','GET',null).then(res => { 
-            this.props.fetchAllPosts(res.data)
+            this.props.fetchAllPosts(res.data);
         })
     }
     
     render(){
 
         var {posts} = this.props;
-        //var {posts} = this.state;
 
         var arrPosts = posts.map( (post,i) =>  
         <Post 
-            key= {i}
+            key= {post.Id}
             avatar={post.Thumb}
             title={post.Author}
             image={post.Thumb}
             content={post.Intro} 
         />);
 
+       
+
         return (
             <div id="posts">
                 {arrPosts}
+                <LoadMore/>
             </div>
         )
 

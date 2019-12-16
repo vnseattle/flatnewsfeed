@@ -7,9 +7,10 @@ export default (state = initState, action ) => {
         case types.LIST_ALL:
             return [...state]
         case types.LIST_POSTS:
+            state = action.posts;
             return [...state]
         case types.FETCH_POSTS:
-            state = action.posts;
+            state = state.concat(action.posts);
             return [...state]
         default: return [...state]
     }
