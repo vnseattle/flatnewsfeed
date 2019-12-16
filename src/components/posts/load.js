@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import callAPI from './../../utils/apiCaller';
 import { fetchPosts } from './../../actions/index';
+import callAPI from './../../utils/apiCaller';
+import getScrolled from './../../utils/getScrolled';
 
 class Load extends Component{
 
@@ -16,26 +17,18 @@ class Load extends Component{
 
     componentWillMount(){
         this.scrollListener = window.addEventListener('scroll',(e) => {
-            this.handleScroll(e);
+            this.handleScroll();
             this.setState({ isScrolling: true});
         });
     }
 
-    handleScroll = (e) => {
+    handleScroll = () => {
         var {isScrolled} = this.state;
-
-        const winScroll =
-        document.body.scrollTop || document.documentElement.scrollTop
-
-        const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight
-        const scrolled = winScroll / height;
-        if((scrolled*100)>95 && !isScrolled){
+        if(getScrolled()>95 && !isScrolled){
             this.setState({isScrolled:true});
             this.LoadMore();
         }
-        if((scrolled*100)>70 && (scrolled*100)<90  && isScrolled){
+        if(getScrolled()>70 && getScrolled()<90  && isScrolled){
             this.setState({isScrolled:false});
         }
     }
