@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { fetchPosts } from './../../actions/index';
-import callAPI from './../../utils/apiCaller';
+import callAPI from '../../utils/callAPI';
 import getScrolled from './../../utils/getScrolled';
 
 class Load extends Component{
