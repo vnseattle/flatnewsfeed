@@ -28,6 +28,7 @@ class Posts extends Component{
         var arrPosts = posts.map( (post,i) =>  
         <Post 
             key= {post.Id}
+            id = {post.Id}
             avatar={post.Thumb}
             title={post.Author}
             image={post.Thumb}

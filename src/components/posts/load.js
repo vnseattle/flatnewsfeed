@@ -15,8 +15,7 @@ class Load extends Component{
 
     LoadMore = () => {
         var {posts} = this.props;
-
-        callAPI('GetPostsNewsFeed.php?crid='+posts[posts.length-1].Id+'&tagid=0','GET',null).then(res => { 
+        callAPI('GetPostsNewsFeed.php?crid='+posts[posts.length-1].Id+'&tagid=0').then(res => { 
                 this.props.fetchAllPosts(res.data);
                 if(res.data.length == 0){
                     this.setState({
@@ -24,7 +23,6 @@ class Load extends Component{
                     })
                 }
         })
-        
     }
     
     render(){

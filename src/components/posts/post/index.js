@@ -1,11 +1,41 @@
 import React, { Component } from 'react'
+import callAPI from './../../../utils/apiCaller';
 
 class Post extends Component{
 
+    state = {
+      detail: null
+    }
+
+    popup = (id) => {
+      var {detail} = this.state;
+      callAPI('GetPost.php?id='+id).then(res => { 
+                  this.setState({
+                    detail: res.data
+                  })
+              
+      })
+    }
+
     render(){
-        var {avatar, title, image, content} = this.props;
+        var {id, avatar, title, image, content} = this.props;
+        var {detail} = this.state;
+         
+        var isNoMsg = false;
+        var msg = detail ? detail[0].Message : '';
+        msg == '' ? isNoMsg=true : isNoMsg=false; 
+        msg = msg.split('<br/>').map(function(item, key) {
+          return (
+            <span key={key}>
+              {item}
+              <br/>
+            </span>
+          )
+        });
+
+
         return(
-                <div className="post"> 
+                <div className="post" onClick={() => this.popup(id)}> 
                   <div className="post__head">
                     <div className="post__head__avatar">
                         <img src={avatar} />
@@ -23,6 +53,12 @@ class Post extends Component{
                   <div className="post__content">
                         <p>{content}</p>
                   </div>
+
+                  { isNoMsg ? null : <div className="post__message">
+                    {msg}
+                  </div>
+                  }
+
                 </div>
         )
     }

@@ -11,8 +11,8 @@ class Menu extends Component{
     render(){
         return(
             <div id="menu">
-            <button id="menu__list-all" onClick={() => this.changeCategory('1')} >List All</button>
-            <button id="menu__list-event" onClick={() => this.changeCategory('2')} >List Events</button>
+            <div className='menu__item' id="menu__list-all" onClick={() => this.changeCategory('1')} ><span>Home</span></div>
+            <div className='menu__item' id="menu__list-event" onClick={() => this.changeCategory('2')} ><span>About</span></div>
             </div>
         )
     }
