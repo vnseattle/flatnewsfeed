@@ -8,15 +8,18 @@ import * as types from './../constants/PostsActionType';
 var initState = [];
 
 /**
- * state is the input state, which empty is default
- * action is the action which is requested to 
- * change the store 
+ * state is the input state
+ * action is the action which is requested to change the store 
  */
 export default (state = initState, action ) => {
     switch(action.type){
         case types.FETCH_POSTS:
             state = state.concat(action.posts);
             return [...state]
+        case types.FETCH_POSTS_BY_TAG:
+            state = [];
+            state = action.posts;
+            return [...state];
         default: return [...state]
     }
     return state;

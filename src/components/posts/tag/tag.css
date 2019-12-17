@@ -1,0 +1,29 @@
+#posts__tag{
+    display: flex;
+    margin-top: 10px;
+}
+
+.posts__tags--circle{
+    margin: 10px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.posts__tags--circle img:hover{
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); 
+}
+
+.posts__tags--circle img{
+    display: block;
+    margin: 1em auto;
+    max-width: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    border-radius: 99em;
+    border: 5px solid white;
+    
+    cursor: pointer;
+}

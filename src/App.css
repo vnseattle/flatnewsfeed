@@ -6,13 +6,10 @@
 
 body{
   background:#f4f4f4;
-
 }
 
 #app{
-  
   align-items: center;
   margin: auto;
   max-width: 750px;
-
 }

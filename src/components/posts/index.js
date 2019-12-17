@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import Post from './post/index';
 import { connect } from 'react-redux';
 import callAPI from './../../utils/callAPI';
-import { fetchPosts} from './../../actions/index';
-import LoadMore from './load';
+import { fetchPosts } from './../../actions/index';
+import LoadMore from './load/';
+import Tag from './tag/';
 import './posts.css';
 
 class Posts extends Component{
@@ -11,28 +12,29 @@ class Posts extends Component{
     constructor(props){
         super(props);
         this.state = {
-            posts: [],
+            tagID:'0'
         };
     }
-
+   
     componentDidMount(){
-        this.initalLoad();
-    }
-
-    initalLoad(){
         var {posts} = this.props;
-        if(posts.length==0){
+        if(posts.length===0){
             callAPI(`GetPostsNewsFeed.php?crid=0&tagid=0`,'GET',null).then(res => { 
                     this.props.fetchAllPosts(res.data);
             })
         }
     }
 
+    getPostsByTag = (tagID) =>{
+        this.setState({tagID});
+    }
+
     render(){
 
         var {posts} = this.props;
+        var {tagID} = this.state;
 
-        var arrPosts = posts.map( (post,i) =>  
+        var arrPosts = posts.map( (post) =>  
         <Post 
             key= {post.Id}
             id = {post.Id}
@@ -43,10 +45,12 @@ class Posts extends Component{
         />);
 
         return (
-            <div id="posts">
+            <div>
+                <div id="posts">
+                <Tag getPostsByTag={this.getPostsByTag} />
                 {arrPosts}
-                 <LoadMore/>
-                
+                <LoadMore tagID={tagID}/>
+                </div>
             </div>
         )
 
@@ -55,7 +59,7 @@ class Posts extends Component{
 
 const mapStateToProps = state =>{
     return {
-        posts: state.posts
+        posts: state.posts    
     }
 }
 

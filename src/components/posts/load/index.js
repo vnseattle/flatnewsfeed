@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { fetchPosts } from './../../actions/index';
-import callAPI from '../../utils/callAPI';
-import getScrolled from './../../utils/getScrolled';
+import { fetchPosts } from '../../../actions/index';
+import callAPI from '../../../utils/callAPI';
+import getScrolled from '../../../utils/getScrolled';
+import './load.css';
 
 class Load extends Component{
 
     constructor(props){
         super(props);
         this.state = {
-            posts: [],
             isEnd: false,
-            isScrolled: false
+            isScrolled: false,
+            tagID:'0'
         };
     }
 
@@ -23,7 +24,7 @@ class Load extends Component{
 
     componentWillMount(){
         var {posts} = this.props;
-        if(posts.length==0){
+        if(posts.length===0){
             this.scrollListener = window.addEventListener('scroll',(e) => {
                 this.handleScroll();
             });
@@ -43,8 +44,8 @@ class Load extends Component{
     }
 
     loadMore = () => {
-        var {posts} = this.props;
-        callAPI('GetPostsNewsFeed.php?crid='+posts[posts.length-1].Id+'&tagid=0').then(res => { 
+        var {posts,tagID} = this.props;        
+        callAPI('GetPostsNewsFeed.php?crid='+posts[posts.length-1].Id+'&tagid='+tagID).then(res => { 
                 this.props.fetchAllPosts(res.data);
                 if(res.data.length == 0){
                     this.setState({ isEnd: true})
@@ -72,7 +73,7 @@ const mapStateToProps = state =>{
 }
 
 
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         fetchAllPosts: (posts) => {
             dispatch(fetchPosts(posts));

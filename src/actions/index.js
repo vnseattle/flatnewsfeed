@@ -8,11 +8,24 @@ import * as types from './../constants/PostsActionType';
 
 /**
  * The request to get posts from API
- * @param {*} posts 
+ * @param posts 
  */
 export const fetchPosts = (posts) => {
     return {
         type: types.FETCH_POSTS,
-        posts,  // payload 
+        posts,  
     }
 }
+
+/**
+ * The request to get posts from API by Tag
+ * @param posts 
+ */
+export const fetchPostsByTag = (posts,tagID) => {
+    return {
+        type: types.FETCH_POSTS_BY_TAG,
+        posts,
+        tagID
+    }
+}
+

@@ -5,6 +5,7 @@
     background-color: #333;
     overflow: hidden;
     width: 100vw;
+    height: 0px;
   }
   
   .topnav a {

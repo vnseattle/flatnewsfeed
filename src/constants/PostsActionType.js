@@ -4,3 +4,4 @@
  *********************************************************/
 
 export const FETCH_POSTS = 'FETCH_POSTS';
+export const FETCH_POSTS_BY_TAG = 'FETCH_POSTS_BY_TAG';
