@@ -35,8 +35,21 @@ Posts – Where to displays Posts
 Based on the Redux Structure 
 <img src='https://www.esri.com/arcgis-blog/wp-content/uploads/2017/09/react-redux-overview.png' />
 
-Actions: to store activities that are used by the dispatcher.
-Reducers: to store the reducer who works in the store.
-Components: the components are divided into modules. Each module has its own make-up files and executes files. They shared the state by using a store created in the main index.js.
-Constants: to store CONSTANT VARIABLES.
-Utils: to store standard functions which will be used repetitively during the development. 
+* Actions: to store activities that are used by the dispatcher.
+* Reducers: to store the reducer who works in the store.
+* Components: the components are divided into modules. Each module has its own make-up files and executes files. They shared the state by using a store created in the main index.js.
+* Constants: to store CONSTANT VARIABLES.
+* Utils: to store standard functions which will be used repetitively during the development. 
+
+### APIs
+
+| GET | API | NOTE |
+| ------ | ------ | ----- |
+| Posts | [HOST]/GetPostsNewsFeed.php?crid={lastPostID}&tagid={tagID} | This API is used to load the overview of the posts on the newsfeed. List of ten posts from the last post. 
+| Post | [HOST]/GetPost.php?id={postID} | This API is used to connect with the detail of each post when the user clicks to a post.
+
+#### API exmaples 
+| GET | API |
+| ------ | ------ |
+| Posts | http://vnseattle.com/vnsapp/GetPostsNewsFeed.php?crid=0&tagid=0
+| Post | http://vnseattle.com/vnsapp/GetPost.php?id=935
