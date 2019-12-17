@@ -56,3 +56,14 @@ Based on the Redux Structure
 | ------ | ------ |
 | Posts | http://vnseattle.com/vnsapp/GetPostsNewsFeed.php?crid=0&tagid=0
 | Post | http://vnseattle.com/vnsapp/GetPost.php?id=935
+
+### Installation
+
+Flat Newsfeed requires [Node.js](https://nodejs.org/) v12+ to run.
+
+```sh
+$ git clone https://github.com/vnseattle/flatnewsfeed flatnewsfeed
+$ cd flatnewsfeed
+$ npm install
+$ npm start
+```
