@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import IconNewsPaper from "./icons/newspaper.png";
-import IconTent from "./icons/camping-tent.png";
-import IconNetwork from "./icons/network.png";
-import IconFirework from "./icons/confetti.png";
-import IconSocial from "./icons/social-media.png";
+import IconNewsPaper from "./../../../assets/icons/newspaper.png";
+import IconTent from "./../../../assets//icons/camping-tent.png";
+import IconNetwork from "./../../../assets//icons/network.png";
+import IconFirework from "./../../../assets//icons/confetti.png";
+import IconSocial from "./../../../assets//icons/social-media.png";
 import callAPI from './../../../utils/callAPI';
 import { connect } from 'react-redux';
 import { fetchPostsByTag} from './../../../actions/index';
@@ -21,11 +21,11 @@ class Tag extends Component{
     render(){
         return(
                 <div id="posts__tag">
-                    <div className="posts__tags--circle" onClick={()=> this.getPostsByTag('0')}><img src={IconNewsPaper} /></div>
-                    <div className="posts__tags--circle" onClick={()=> this.getPostsByTag('1')}><img src={IconNetwork} /></div>
-                    <div className="posts__tags--circle" onClick={()=> this.getPostsByTag('2')}><img src={IconFirework} /></div>
-                    <div className="posts__tags--circle" onClick={()=> this.getPostsByTag('3')}><img src={IconTent} /></div>
-                    <div className="posts__tags--circle" onClick={()=> this.getPostsByTag('4')}><img src={IconSocial} /></div>
+                    <div className="posts__tags--circle" onClick={()=> this.getPostsByTag('0')}><img src={IconNewsPaper} alt='all'/></div>
+                    <div className="posts__tags--circle" onClick={()=> this.getPostsByTag('1')}><img src={IconNetwork} alt='org'/></div>
+                    <div className="posts__tags--circle" onClick={()=> this.getPostsByTag('2')}><img src={IconFirework} alt='event'/></div>
+                    <div className="posts__tags--circle" onClick={()=> this.getPostsByTag('3')}><img src={IconTent} alt='place'/></div>
+                    <div className="posts__tags--circle" onClick={()=> this.getPostsByTag('4')}><img src={IconSocial} alt='hot deal'/></div>
                 </div>
         )
     }

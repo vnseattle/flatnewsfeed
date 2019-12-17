@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import callAPI from './../../../utils/callAPI';
-import IconTent from "./../tag/icons/camping-tent.png";
-import IconNetwork from "./../tag/icons/network.png";
-import IconFirework from "./../tag/icons/confetti.png";
-import IconSocial from "./../tag/icons/social-media.png";
+import IconTent from "./../../../assets/icons/camping-tent.png";
+import IconNetwork from "./../../../assets/icons/network.png";
+import IconFirework from "./../../../assets/icons/confetti.png";
+import IconSocial from "./../../../assets/icons/social-media.png";
 import './post.css';
 
 class Post extends Component{
@@ -13,7 +13,6 @@ class Post extends Component{
     }
 
     popup = (id) => {
-      var {detail} = this.state;
       callAPI('GetPost.php?id='+id).then(res => { 
                   this.setState({
                     detail: res.data
@@ -35,10 +34,10 @@ class Post extends Component{
                 <div className="post" onClick={() => this.popup(id)}> 
                   <div className="post__head">
                     <div className="post__head__avatar">
-                    {tag==1 && <img src={IconNetwork} />}
-                    {tag==2 && <img src={IconFirework} />}
-                    {tag==3 && <img src={IconTent} />}
-                    {tag==4 && <img src={IconSocial} />}
+                    {tag==='1' && <img src={IconNetwork} alt={title} />}
+                    {tag==='2' && <img src={IconFirework} alt={title} />}
+                    {tag==='3' && <img src={IconTent} alt={title} />}
+                    {tag==='4' && <img src={IconSocial} alt={title} />}
                     </div>
 
                     <div className="post__head__title">

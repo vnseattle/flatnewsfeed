@@ -47,7 +47,7 @@ class Load extends Component{
         var {posts,tagID} = this.props;        
         callAPI('GetPostsNewsFeed.php?crid='+posts[posts.length-1].Id+'&tagid='+tagID).then(res => { 
                 this.props.fetchAllPosts(res.data);
-                if(res.data.length == 0){
+                if(res.data.length === 0){
                     this.setState({ isEnd: true})
                 }
         })
