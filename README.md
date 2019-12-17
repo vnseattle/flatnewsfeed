@@ -22,7 +22,7 @@ Flat Newsfeed uses a number of Javascript library to work properly:
 <img src='http://vnseattle.com/vnsmarket-design/home-overview-layout.png'/>
 
 Posts – Where to displays Posts
-1. Tags - where 
+1. Tags - fillter buttons for loading posts by a tag
 2. Posts – are displayed post information
 * avatar: avatar of the post
 * title: title for the post at the top
