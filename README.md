@@ -1,6 +1,9 @@
 # Flat Newsfeed
 This feature is a part of the Advertising Board of VNSeattle. It will display posts that are fetched by APIs provided by the VnSeattle server on a newsfeed.
 
+# Live Demo
+[Live Demo Flat NewsFeed - click here](https://master.d2tb1gog3fr3bu.amplifyapp.com/)
+
 # Features!
 
   1. Display posts on the newsfeed
@@ -33,12 +36,12 @@ Posts – Where to displays Posts
 
 #### Structure
 Based on the Redux Structure 
-<img src='https://www.esri.com/arcgis-blog/wp-content/uploads/2017/09/react-redux-overview.png' />
+<img src='http://vnseattle.com/vnsmarket-design/structure-redux.png' />
 
 * Actions: to store activities that are used by the dispatcher.
 * Reducers: to store the reducer who works in the store.
 * Components: the components are divided into modules. Each module has its own make-up files and executes files. They shared the state by using a store created in the main index.js.
-* Constants: to store CONSTANT VARIABLES.
+* Constants: to store constants variable.
 * Utils: to store standard functions which will be used repetitively during the development. 
 
 ### APIs
