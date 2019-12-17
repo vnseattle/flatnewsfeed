@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import callAPI from './../../../utils/callAPI';
+import './post.css';
 
 class Post extends Component{
 
@@ -12,8 +13,7 @@ class Post extends Component{
       callAPI('GetPost.php?id='+id).then(res => { 
                   this.setState({
                     detail: res.data
-                  })
-              
+                  })     
       })
     }
 

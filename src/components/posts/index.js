@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import callAPI from './../../utils/callAPI';
 import { fetchPosts} from './../../actions/index';
 import LoadMore from './load';
+import './posts.css';
 
 class Posts extends Component{
 

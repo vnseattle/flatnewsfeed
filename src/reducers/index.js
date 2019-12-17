@@ -7,8 +7,7 @@ import { combineReducers } from 'redux';
 import posts from './posts';
 
 /**
- * Right now we only have posts
- * to combie 
+ * Right now we only have posts to combie 
  */
 export default combineReducers({
     posts
