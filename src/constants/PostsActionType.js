@@ -1,3 +1,6 @@
-export const LIST_ALL = 'LIST_ALL';
-export const LIST_POSTS = 'LIST_POSTS';
+/*********************************************************
+ * There is the store to store constants that relate to 
+ * actions which will be sent to the reducers 
+ *********************************************************/
+
 export const FETCH_POSTS = 'FETCH_POSTS';
