@@ -38,7 +38,7 @@ class Posts extends Component{
         <Post 
             key= {post.Id}
             id = {post.Id}
-            avatar={post.Thumb}
+            tag = {post.TagID}
             title={post.Author}
             image={post.Thumb}
             content={post.Intro} 
