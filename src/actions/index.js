@@ -9,6 +9,6 @@ export const fetchPosts = (posts) => {
 
 export const clearPosts = () => {
     return {
-        type: 'CLEAR_POST'
+        type: 'CLEAR_POSTS'
     }
 }

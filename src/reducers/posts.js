@@ -7,6 +7,9 @@ export default (state = initState, action ) => {
         case types.FETCH_POSTS:
             state = state.concat(action.posts);
             return [...state]
+        case "CLEAR_POSTS":
+            console.log("clear....");
+            return []
         default: return [...state]
     }
     return state;

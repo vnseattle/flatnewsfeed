@@ -2,24 +2,27 @@ import React, { Component } from 'react'
 import Post from './post/index';
 import { connect } from 'react-redux';
 import callAPI from './../../utils/callAPI';
-import { fetchPosts } from './../../actions/index';
+import { fetchPosts} from './../../actions/index';
 import LoadMore from './load';
 
 class Posts extends Component{
 
-    
     constructor(props){
         super(props);
         this.state = {
-            posts: []        
+            posts: [],
         };
     }
 
     componentDidMount(){
+        this.initalLoad();
+    }
+
+    initalLoad(){
         var {posts} = this.props;
         if(posts.length==0){
-            callAPI('GetPostsNewsFeed.php?crid=0&tagid=0','GET',null).then(res => { 
-                this.props.fetchAllPosts(res.data);
+            callAPI(`GetPostsNewsFeed.php?crid=0&tagid=0`,'GET',null).then(res => { 
+                    this.props.fetchAllPosts(res.data);
             })
         }
     }
@@ -38,12 +41,11 @@ class Posts extends Component{
             content={post.Intro} 
         />);
 
-       
-
         return (
             <div id="posts">
                 {arrPosts}
-                <LoadMore/>
+                 <LoadMore/>
+                
             </div>
         )
 

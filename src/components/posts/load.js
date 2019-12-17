@@ -16,11 +16,9 @@ class Load extends Component{
     }
 
     setScrolled(status){
-        if (this._isMounted) {
-            this.setState({
-                isScrolled: status
-            });
-          }
+        this.setState({
+            isScrolled: status
+        });
     }
 
     componentWillMount(){
@@ -31,21 +29,20 @@ class Load extends Component{
             });
         }
     }
-
    
 
     handleScroll = () => {
         var {isScrolled} = this.state;
         if(getScrolled()>95 && !isScrolled){
             this.setScrolled(true);
-            this.LoadMore();
+            this.loadMore();
         }
         if(getScrolled()>70 && getScrolled()<90  && isScrolled){
             this.setScrolled(false);
         }
     }
 
-    LoadMore = () => {
+    loadMore = () => {
         var {posts} = this.props;
         callAPI('GetPostsNewsFeed.php?crid='+posts[posts.length-1].Id+'&tagid=0').then(res => { 
                 this.props.fetchAllPosts(res.data);

@@ -10,7 +10,7 @@ body{
 }
 
 #app{
-  justify-content: center;
+  
   align-items: center;
   margin: auto;
   max-width: 750px;
@@ -22,12 +22,13 @@ body{
   max-width: 500px;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+
 }
 
 #posts #load{
   text-align: center;
-  padding: 10px;
-  padding-bottom: 15px;
+  padding: 2px;
   background: #efefef;
   margin: 15px;
   border-radius: 30px;
@@ -35,6 +36,7 @@ body{
   color: #6d6d6d;
   cursor: pointer;
 }
+
 
 .post{
   display: flex;
@@ -53,9 +55,14 @@ body{
   
 }
 
+.post:first-child{
+  margin-top: 70px;
+}
+
 .post:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
 
 .post__head{
   display: flex;
@@ -145,8 +152,29 @@ body{
   border-radius: 3px;
 }
 
-@media all and (max-width:700px){
-  #menu{
-    display: none;
-  }
+.topnav {
+  z-index: 99;
+  position: fixed;
+  background-color: #333;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
 }
