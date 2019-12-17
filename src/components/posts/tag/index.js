@@ -1,3 +1,8 @@
+/**********************************************
+ * Component: TAG 
+ * Author: Henry Ng - Dec 17, 2019
+ * This component is used to filter the posts 
+ ********************************************/
 import React, { Component } from 'react'
 import IconNewsPaper from "./../../../assets/icons/newspaper.png";
 import IconTent from "./../../../assets//icons/camping-tent.png";
@@ -11,8 +16,16 @@ import './tag.css';
 
 class Tag extends Component{
 
+    /**
+     * Import the tagID 
+     * @param {string} tagID 
+     */
     getPostsByTag(tagID){
+        // sending tagID, to make sure the 
+        // next 10 posts are in the same tag 
         this.props.getPostsByTag(tagID);
+
+        // Call API to fecth data by Tag
         callAPI(`GetPostsNewsFeed.php?crid=0&tagid=`+tagID,'GET',null).then(res => { 
             this.props.fetchAllPostsByTag(res.data);
         })
@@ -31,7 +44,7 @@ class Tag extends Component{
     }
 }
 
-
+// sent action only, doesn't need to map state
 const mapDispatchToProps = (dispatch, props) => {
     return {
         fetchAllPostsByTag:(posts) =>{

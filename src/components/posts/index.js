@@ -1,3 +1,10 @@
+/**********************************************
+ * Component: POSTS 
+ * Author: Henry Ng - Dec 17, 2019
+ * This component is used to build the layout
+ * of list of posts, includes 
+ * tag filters and load more
+ ********************************************/
 import React, { Component } from 'react'
 import Post from './post/index';
 import { connect } from 'react-redux';

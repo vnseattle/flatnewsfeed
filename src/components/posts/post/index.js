@@ -1,3 +1,8 @@
+/**********************************************
+ * Component: POST  
+ * Author: Henry Ng - Dec 17, 2019
+ * This component is used to display a post 
+ ********************************************/
 import React, { Component } from 'react'
 import callAPI from './../../../utils/callAPI';
 import IconTent from "./../../../assets/icons/camping-tent.png";
@@ -8,19 +13,23 @@ import './post.css';
 
 class Post extends Component{
 
+    // initial state 
     state = {
       detail: null
     }
 
-    popup = (id) => {
+    // get post detail 
+    postDetail = (id) => {
+      // call API 
       callAPI('GetPost.php?id='+id).then(res => { 
-                  this.setState({
-                    detail: res.data
-                  })     
+              this.setState({detail: res.data})     
       })
     }
 
+    // render post interface 
     render(){
+
+        // Get info from props 
         var {id, title, image, content, tag} = this.props;
         var {detail} = this.state;
         // Check MSG
@@ -31,7 +40,7 @@ class Post extends Component{
       
 
         return(
-                <div className="post" onClick={() => this.popup(id)}> 
+                <div className="post" onClick={() => this.postDetail(id)}> 
                   <div className="post__head">
                     <div className="post__head__avatar">
                     {tag==='1' && <img src={IconNetwork} alt={title} />}

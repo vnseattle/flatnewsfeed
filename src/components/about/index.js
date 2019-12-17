@@ -6,7 +6,7 @@ class Menu extends Component{
        
         return (
             <div>
-                About
+                About Page 
             </div>
             
         )

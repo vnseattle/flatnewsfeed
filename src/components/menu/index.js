@@ -4,6 +4,10 @@ import Posts from './../posts/';
 import About from './../about/';
 import './menu.css';
 
+/**
+ * Redering Menu, using react-router-dom for direction
+ */
+
 class Menu extends Component{
 
     render(){

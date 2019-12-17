@@ -1,4 +1,6 @@
 /*********************************************************
+ * REDUCERS 
+ * Author: Henry Ng - Dec 17, 2019
  * The reducers that relate to the posts which are displayed
  * on the news feed
  *********************************************************/
