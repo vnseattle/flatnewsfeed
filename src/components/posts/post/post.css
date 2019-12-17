@@ -2,13 +2,13 @@
 .post{
     display: flex;
     flex-direction: column;
-    margin: var(--post-margin);
-    margin-top:var(--top-margin);
+    margin: 15px;
+    margin-top:15px;
     font-size: 12px;
     border-radius: 4px;
     background-color: white;
     min-height: 100px;
-    width: calc(100vh- var(--post-margin));
+    width: calc(100vh- 15px);
     background-color: #fff;
     box-shadow: 0 5px 25px 0 rgba(123,123,123,.15);
     transition: 0.3s;
@@ -71,7 +71,7 @@
   
   .post__content p{
     color:#6d6d6d;
-    font-size: var(--font-size);
+    font-size: 17px;
     padding: 10px;
   }
   
