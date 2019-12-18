@@ -8,7 +8,6 @@
 import React, { Component } from 'react'
 import Post from './post/index';
 import { connect } from 'react-redux';
-import callAPI from './../../utils/callAPI';
 import { appendPostsRequest } from './../../actions/index';
 import LoadMore from './load/';
 import Tag from './tag/';
@@ -19,17 +18,20 @@ class Posts extends Component{
     constructor(props){
         super(props);
         this.state = {
-            tagID:'0'
+            tagID:'0', // default tag
+            isScrolled: false // user is scrolling 
         };
-    }
-   
-    componentDidMount(){
-        var {posts} = this.props;
+
+        // first start with inital posts
+        var {posts} = this.props;        
         if(posts.length===0){
-            this.props.fetchAllPosts();
+            var config = { id:'0', tag:'0'};
+            this.props.fetchInitPosts(config);
         }
     }
 
+
+    // binding tagID
     getPostsByTag = (tagID) =>{
         this.setState({tagID});
     }
@@ -39,9 +41,9 @@ class Posts extends Component{
         var {posts} = this.props;
         var {tagID} = this.state;
 
-        var arrPosts = posts.map( (post) =>  
+        var arrPosts = posts.map( (post,i) =>  
         <Post 
-            key= {post.Id}
+            key= {i}
             id = {post.Id}
             tag = {post.TagID}
             title={post.Author}
@@ -70,8 +72,8 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchAllPosts: () => {
-            dispatch(appendPostsRequest());
+        fetchInitPosts: (config) => {
+            dispatch(appendPostsRequest(config.id,config.tag));
         }
     }
 }

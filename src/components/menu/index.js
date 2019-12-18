@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Posts from './../posts/';
 import About from './../about/';
 import SearchIcon from './../../assets/icons/search.png';
@@ -47,7 +47,8 @@ class Menu extends Component{
                 <div>
                     <div className="menu-cover">
                         <div className="topnav">
-                            <a className="active" href="/">Home</a>
+                            <Link to="/">Home</Link>
+                            <Link to="/about">About</Link>
                             <div className="search-container">
                                 <form  onSubmit={this.handleSubmit}>
                                     <input type="text" placeholder="Search.." name="search"  onChange={this.handleInputChange}/>
@@ -57,6 +58,8 @@ class Menu extends Component{
                         </div>
                     </div>
                     <Route path="/" exact component={Posts} />
+                    <Route path="/about" exact component={About} />
+
                 </div>
                 </Router>
             </div>

@@ -8,9 +8,13 @@
 import * as types from './../constants/PostsActionType';
 import callAPI  from './../utils/callAPI';
 
-export const appendPostsRequest = () => {
+/**
+ * Appends posts after call API 
+ */
+export const appendPostsRequest = (pid,tag) => {
+    console.log("API Action",pid,tag);
     return (dispatch) => {
-        return callAPI(`GetPostsNewsFeed.php?crid=0&tagid=0`,'GET',null).then(res => { 
+        return callAPI(`GetPostsNewsFeed.php?crid=${pid}&tagid=${tag}`,'GET',null).then(res => { 
             dispatch(appendPosts(res.data));
         })
     }
@@ -23,7 +27,7 @@ export const appendPostsRequest = () => {
 export const appendPosts = (posts) => {
     return {
         type: types.APPEND_POSTS,
-        posts,  
+        posts  
     }
 }
 
