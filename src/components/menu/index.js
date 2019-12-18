@@ -48,7 +48,6 @@ class Menu extends Component{
                     <div className="menu-cover">
                         <div className="topnav">
                             <a className="active" href="/">Home</a>
-                            <a href="/classifieds">Classifieds</a>
                             <div className="search-container">
                                 <form  onSubmit={this.handleSubmit}>
                                     <input type="text" placeholder="Search.." name="search"  onChange={this.handleInputChange}/>
@@ -58,8 +57,6 @@ class Menu extends Component{
                         </div>
                     </div>
                     <Route path="/" exact component={Posts} />
-                    <Route path="/about"  component={About} />
-                    <Route path="/search"  component={About} />
                 </div>
                 </Router>
             </div>
