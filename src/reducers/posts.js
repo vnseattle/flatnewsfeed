@@ -22,6 +22,10 @@ export default (state = initState, action ) => {
             state = [];
             state = action.posts;
             return [...state];
+        case types.SEARCH_POSTS:
+            state = [];
+            state = action.posts;
+            return [...state]
         default: return [...state]
     }
 }

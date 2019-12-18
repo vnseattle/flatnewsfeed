@@ -1,81 +1,81 @@
 
 .post{
-    display: flex;
-    flex-direction: column;
-    margin: 15px;
-    margin-top:15px;
-    font-size: 12px;
-    border-radius: 4px;
-    background-color: white;
-    min-height: 100px;
-    background-color: #fff;
-    box-shadow: 0 5px 25px 0 rgba(123,123,123,.15);
-    transition: 0.3s;
-    cursor: pointer;
-    
-  }
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  margin-top:15px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: white;
+  min-height: 100px;
+  background-color: #fff;
+  box-shadow: 0 5px 25px 0 rgba(123,123,123,.15);
+  transition: 0.3s;
+  cursor: pointer;
   
-  .post:first-child{
-    margin-top: 70px;
-  }
-  
-  .post:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  
-  .post__head{
-    display: flex;
-    flex-direction: row;
-    height: 50px;
-    border-radius: 4px 4px 0px 0px;
-  
-  }
-  
-  .post__head__avatar{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    border-radius: 4px 0px 0px 0px;
-    height: 50px;
-    width: 50px;
-  }
-  
-  .post__head__avatar img{
-    border-radius: 50%;
-    width: 60%;
-    height: 60%;
-    margin: auto;
-  }
-  
-  .post__head__title{
-    display: flex;
-    border-radius: 0px 4px 0px 0px;
-    height: 50px;
-    width: 30px;
-    flex-grow: 1;
-    text-align: left;
-  }
-  
-  .post__head__title div{
-    align-self: center;
-    margin-left: 10px;
-    color: #878787;
-    font-size: 16px;
-  }
-  
-  .post__image img{
-    width: 100%;
-  }
-  
-  .post__content p{
-    color:#6d6d6d;
-    font-size: 17px;
-    padding: 10px;
-  }
-  
-  .post__message{
-    background: aliceblue;
-    padding: 15px;
-    font-size: 13px;
-  }
+}
+
+.post:first-child{
+  margin-top: 70px;
+}
+
+.post:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.post__head{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  border-radius: 4px 4px 0px 0px;
+
+}
+
+.post__head__avatar{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 4px 0px 0px 0px;
+  height: 50px;
+  width: 50px;
+}
+
+.post__head__avatar img{
+  border-radius: 50%;
+  width: 60%;
+  height: 60%;
+  margin: auto;
+}
+
+.post__head__title{
+  display: flex;
+  border-radius: 0px 4px 0px 0px;
+  height: 50px;
+  width: 30px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.post__head__title div{
+  align-self: center;
+  margin-left: 10px;
+  color: #878787;
+  font-size: 16px;
+}
+
+.post__image img{
+  width: 100%;
+}
+
+.post__content p{
+  color:#6d6d6d;
+  font-size: 17px;
+  padding: 10px;
+}
+
+.post__message{
+  background: aliceblue;
+  padding: 15px;
+  font-size: 13px;
+}

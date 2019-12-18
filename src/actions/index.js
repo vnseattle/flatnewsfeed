@@ -29,3 +29,15 @@ export const fetchPostsByTag = (posts,tagID) => {
     }
 }
 
+
+/**
+ * Seach for posts 
+ * @param posts 
+ */
+export const searchPosts = (posts) => {
+    return {
+        type: types.SEARCH_POSTS,
+        posts
+    }
+}
+
