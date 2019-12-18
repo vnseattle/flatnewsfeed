@@ -9,7 +9,7 @@ import React, { Component } from 'react'
 import Post from './post/index';
 import { connect } from 'react-redux';
 import callAPI from './../../utils/callAPI';
-import { appendPosts } from './../../actions/index';
+import { appendPostsRequest } from './../../actions/index';
 import LoadMore from './load/';
 import Tag from './tag/';
 import './posts.css';
@@ -26,9 +26,7 @@ class Posts extends Component{
     componentDidMount(){
         var {posts} = this.props;
         if(posts.length===0){
-            callAPI(`GetPostsNewsFeed.php?crid=0&tagid=0`,'GET',null).then(res => { 
-                    this.props.fetchAllPosts(res.data);
-            })
+            this.props.fetchAllPosts();
         }
     }
 
@@ -70,10 +68,10 @@ const mapStateToProps = state =>{
     }
 }
 
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        fetchAllPosts: (posts) => {
-            dispatch(appendPosts(posts));
+        fetchAllPosts: () => {
+            dispatch(appendPostsRequest());
         }
     }
 }

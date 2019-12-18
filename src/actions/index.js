@@ -6,6 +6,15 @@
  * Author: Henry Ng - Dec 18, 2019
  *********************************************************/
 import * as types from './../constants/PostsActionType';
+import callAPI  from './../utils/callAPI';
+
+export const appendPostsRequest = () => {
+    return (dispatch) => {
+        return callAPI(`GetPostsNewsFeed.php?crid=0&tagid=0`,'GET',null).then(res => { 
+            dispatch(appendPosts(res.data));
+        })
+    }
+}
 
 /**
  * Appends new posts to the store 

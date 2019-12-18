@@ -12,7 +12,7 @@ This feature is a part of the Advertising Board of VNSeattle. It will display po
   4. Filter
   5. Search bar
  
-### Tech
+### Tech & License 
 
 Flat Newsfeed uses a number of Javascript library to work properly:
 
@@ -20,6 +20,7 @@ Flat Newsfeed uses a number of Javascript library to work properly:
 * Redux - an open-source JavaScript library for managing application state
 * Axios API  - Promise based HTTP client for the browser and node.js
 * react-router-dom - DOM bindings for React Router.
+* Redux-Thunk - Middleware manage asynchronouse actions.
 
 ### Overview
 #### Layout
