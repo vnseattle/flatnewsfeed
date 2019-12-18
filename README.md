@@ -10,6 +10,7 @@ This feature is a part of the Advertising Board of VNSeattle. It will display po
   2. Click to view detail
   3. Infinity scroll
   4. Filter
+  5. Search bar
  
 ### Tech
 
