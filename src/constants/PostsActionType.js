@@ -3,6 +3,5 @@
  * actions which will be sent to the reducers 
  *********************************************************/
 
-export const FETCH_POSTS = 'FETCH_POSTS';
-export const FETCH_POSTS_BY_TAG = 'FETCH_POSTS_BY_TAG';
-export const SEARCH_POSTS = 'SEARCH_POST';
+export const APPEND_POSTS = 'APPEND_POSTS';
+export const UPDATED_LIST_POSTS = 'UPDATED_LIST_POSTS';

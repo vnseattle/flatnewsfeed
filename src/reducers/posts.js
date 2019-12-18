@@ -1,6 +1,6 @@
 /*********************************************************
  * REDUCERS 
- * Author: Henry Ng - Dec 17, 2019
+ * Author: Henry Ng - Dec 18, 2019
  * The reducers that relate to the posts which are displayed
  * on the news feed
  *********************************************************/
@@ -15,17 +15,13 @@ var initState = [];
  */
 export default (state = initState, action ) => {
     switch(action.type){
-        case types.FETCH_POSTS:
+        case types.APPEND_POSTS: // append the posts in store 
             state = state.concat(action.posts);
             return [...state]
-        case types.FETCH_POSTS_BY_TAG:
-            state = [];
-            state = action.posts;
+        case types.UPDATED_LIST_POSTS: // re-new the list 
+            state = []; // clear the store 
+            state = action.posts; // add new posts 
             return [...state];
-        case types.SEARCH_POSTS:
-            state = [];
-            state = action.posts;
-            return [...state]
         default: return [...state]
     }
 }

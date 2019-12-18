@@ -7,7 +7,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../../actions/index';
+import { appendPosts } from '../../../actions/index';
 import callAPI from '../../../utils/callAPI';
 import getScrolled from '../../../utils/getScrolled';
 import './load.css';
@@ -97,7 +97,7 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchAllPosts: (posts) => {
-            dispatch(fetchPosts(posts));
+            dispatch(appendPosts(posts));
         }
     }
 }

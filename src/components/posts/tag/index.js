@@ -11,7 +11,7 @@ import IconFirework from "./../../../assets//icons/confetti.png";
 import IconSocial from "./../../../assets//icons/social-media.png";
 import callAPI from './../../../utils/callAPI';
 import { connect } from 'react-redux';
-import { fetchPostsByTag} from './../../../actions/index';
+import { updateListPosts } from './../../../actions/index';
 import './tag.css';
 
 class Tag extends Component{
@@ -58,10 +58,10 @@ class Tag extends Component{
 }
 
 // sent action only, doesn't need to map state
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         fetchAllPostsByTag:(posts) =>{
-            dispatch(fetchPostsByTag(posts));
+            dispatch(updateListPosts(posts));
         }
     }
 }

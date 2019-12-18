@@ -3,41 +3,28 @@
  * from the application to the store. 
  * They are the only source of information for the store. 
  * You send them to the store using store. dispatch()
+ * Author: Henry Ng - Dec 18, 2019
  *********************************************************/
 import * as types from './../constants/PostsActionType';
 
 /**
- * The request to get posts from API
+ * Appends new posts to the store 
  * @param posts 
  */
-export const fetchPosts = (posts) => {
+export const appendPosts = (posts) => {
     return {
-        type: types.FETCH_POSTS,
+        type: types.APPEND_POSTS,
         posts,  
     }
 }
 
 /**
- * The request to get posts from API by Tag
+ * Updates the list of posts in store 
  * @param posts 
  */
-export const fetchPostsByTag = (posts,tagID) => {
+export const updateListPosts = (posts) => {
     return {
-        type: types.FETCH_POSTS_BY_TAG,
-        posts,
-        tagID
-    }
-}
-
-
-/**
- * Seach for posts 
- * @param posts 
- */
-export const searchPosts = (posts) => {
-    return {
-        type: types.SEARCH_POSTS,
+        type: types.UPDATED_LIST_POSTS,
         posts
     }
 }
-

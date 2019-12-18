@@ -4,7 +4,7 @@ import Posts from './../posts/';
 import About from './../about/';
 import SearchIcon from './../../assets/icons/search.png';
 import callAPI from './../../utils/callAPI';
-import {searchPosts} from './../../actions/index';
+import {updateListPosts} from './../../actions/index';
 import { connect } from 'react-redux';
 
 import './menu.css';
@@ -69,7 +69,7 @@ class Menu extends Component{
 const mapDispatchToProps = (dispatch) => {
     return {
         searchAllPosts: (posts) => {
-            dispatch(searchPosts(posts));
+            dispatch(updateListPosts(posts));
         }
     }
 }
