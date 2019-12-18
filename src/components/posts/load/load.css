@@ -7,5 +7,6 @@
     border: 1px solid #a0a0a0;
     color: #6d6d6d;
     cursor: pointer;
+    visibility: hidden;
 }
   
