@@ -88,7 +88,7 @@ Posts – Where to displays Posts
 
 #### Structure
 
-<img src='http://vnseattle.com/vnsmarket-design/posts-page-redux.png' />
+<img src='http://vnseattle.com/vnsmarket-design/bus-page-redux.png' />
 
 * fetchBusinessesRequest: fetchs new businesses from API 
 * updateBusinesses: updates all businesses in the Redux Store 
