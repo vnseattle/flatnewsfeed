@@ -25,10 +25,22 @@ Flat Newsfeed uses a number of Javascript library to work properly:
 * Redux-Thunk - Middleware manage asynchronouse actions.
 
 ### Overview
+#### Structure
+Based on the Redux Structure 
+<img src='https://miro.medium.com/max/3200/1*XEVxovodur9doQW-GJ6MLA.gif' />
 
+* Actions: to store activities that are used by the dispatcher.
+* Reducers: to store the reducer who works in the store.
+* Components: the components are divided into modules. Each module has its own make-up files and executes files. They shared the state by using a store created in the main index.js.
+* Constants: to store constants variable.
+* Utils: to store standard functions which will be used repetitively during the development. 
+
+#### Components 
+<img src='http://vnseattle.com/vnsmarket-design/component-structure.png' />
+
+### Posts Page ( Home Page )
 #### Layout
 <img src='http://vnseattle.com/vnsmarket-design/newsfeed-overview.png'/>
-
 Posts – Where to displays Posts
 1. Tags - fillter buttons for loading posts by a tag
 2. Posts – are displayed post information
@@ -38,23 +50,12 @@ Posts – Where to displays Posts
 * content: a short introduction
 * detail: more information includes phone, email, detail    
 3. Load – the button to load more posts (includes an infinity scroll)    
-
 #### Structure
-
-Based on the Redux Structure 
-<img src='https://www.esri.com/arcgis-blog/wp-content/uploads/2017/09/react-redux-overview.png' />
-
-* Actions: to store activities that are used by the dispatcher.
-* Reducers: to store the reducer who works in the store.
-* Components: the components are divided into modules. Each module has its own make-up files and executes files. They shared the state by using a store created in the main index.js.
-* Constants: to store constants variable.
-* Utils: to store standard functions which will be used repetitively during the development. 
-
-### Newsfeed ( Home ) page 
 <img src='http://vnseattle.com/vnsmarket-design/posts-page-redux.png' />
-
+* appendPostsRequest: fetch new posts from API 
+* appendPosts: adding new posts to posts in Redux Store
+* updateListPosts: update all posts in the Redux Store 
 #### APIs
-
 | GET | API | NOTE |
 | ------ | ------ | ----- |
 | Posts | [HOST]/GetPostsNewsFeed.php?crid={lastPostID}&tagid={tagID} | This API is used to load the overview of the posts on the newsfeed. List of ten posts from the last post. 
