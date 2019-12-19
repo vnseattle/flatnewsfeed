@@ -1,7 +1,9 @@
 # Flat Newsfeed
-This feature is a part of the Advertising Board of VNSeattle. It will display posts that are fetched by APIs provided by the VnSeattle server on a newsfeed.
+
+This feature is a part of the Advertising Board of VNSeattle Page. It will display posts, business contacts that are fetched by APIs provided by the VnSeattle server/
 
 # Live Demo
+
 [Live Demo Flat NewsFeed - click here](https://master.d2tb1gog3fr3bu.amplifyapp.com/)
 
 # Features!
@@ -27,7 +29,7 @@ Flat Newsfeed uses a number of Javascript library to work properly:
 ### Overview
 #### Structure
 Based on the Redux Structure 
-<img src='https://miro.medium.com/max/3200/1*XEVxovodur9doQW-GJ6MLA.gif' />
+<img src='https://thumbs.gfycat.com/SociableCraftyAlpaca-small.gif' />
 
 * Actions: to store activities that are used by the dispatcher.
 * Reducers: to store the reducer who works in the store.
@@ -41,6 +43,7 @@ Based on the Redux Structure
 ### Posts Page ( Home Page )
 #### Layout
 <img src='http://vnseattle.com/vnsmarket-design/newsfeed-overview.png'/>
+
 Posts – Where to displays Posts
 1. Tags - fillter buttons for loading posts by a tag
 2. Posts – are displayed post information
@@ -49,19 +52,25 @@ Posts – Where to displays Posts
 * picture: an image to display   
 * content: a short introduction
 * detail: more information includes phone, email, detail    
-3. Load – the button to load more posts (includes an infinity scroll)    
+3. Load – the button to load more posts (includes an infinity scroll)  
+
 #### Structure
+
 <img src='http://vnseattle.com/vnsmarket-design/posts-page-redux.png' />
+
 * appendPostsRequest: fetch new posts from API 
 * appendPosts: adding new posts to posts in Redux Store
 * updateListPosts: update all posts in the Redux Store 
+
 #### APIs
+
 | GET | API | NOTE |
 | ------ | ------ | ----- |
 | Posts | [HOST]/GetPostsNewsFeed.php?crid={lastPostID}&tagid={tagID} | This API is used to load the overview of the posts on the newsfeed. List of ten posts from the last post. 
 | Post | [HOST]/GetPost.php?id={postID} | This API is used to connect with the detail of each post when the user clicks to a post.
 
 #### API exmaples 
+
 | GET | API |
 | ------ | ------ |
 | Posts | http://vnseattle.com/vnsapp/GetPostsNewsFeed.php?crid=0&tagid=0
