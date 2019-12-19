@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+//import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Posts from './../posts/';
 import Businesses from './../businesses/index';
 import SearchIcon from './../../assets/icons/search.png';
@@ -18,7 +18,8 @@ class Menu extends Component{
     constructor(props){
         super(props);
         this.state = {
-            searchKey : ""
+            searchKey : "",
+            menu:0
         }
     }
 
@@ -27,7 +28,7 @@ class Menu extends Component{
         var {searchKey} = this.state;
         // search new posts from the API 
         callAPI('SearchNewsFeed.php?keyword='+searchKey).then(res => { 
-            console.log(res.data);
+            //console.log(res.data);
             this.props.searchAllPosts(res.data);
         })
     }
@@ -40,15 +41,30 @@ class Menu extends Component{
         })
     }
 
+    menuControl(id){
+        if(id===0){
+            //window.location.reload(false);
+        }
+        // menu be like an array, start with index: 0
+        this.setState({
+            menu:id
+        })
+    }
+
     render(){
+
+        var activeMenu = <Posts />;
+        if(this.state.menu === 1 ){
+            activeMenu = <Businesses />;
+        }
+
         return (
             <div>
-                <Router>
                 <div>
                     <div className="menu-cover">
                         <div className="topnav">
-                            <a href="/">Home</a>
-                            <a href="/business">Business</a>
+                            <a onClick={()=>this.menuControl(0)}>Home</a>
+                            <a onClick={()=>this.menuControl(1)}>Business</a>
                             <div className="search-container">
                                 <form  onSubmit={this.handleSubmit}>
                                     <input type="text" placeholder="Search.." name="search"  onChange={this.handleInputChange}/>
@@ -57,11 +73,9 @@ class Menu extends Component{
                             </div>
                         </div>
                     </div>
-                    <Route path="/" exact component={Posts} />
-                    <Route path="/business"  component={Businesses} />
-
+                    {activeMenu}
                 </div>
-                </Router>
+             
             </div>
         )
     }

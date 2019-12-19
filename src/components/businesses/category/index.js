@@ -17,6 +17,8 @@ class Category extends Component{
     callAPI(`GetCat.php`,'GET',null).then(res => { 
         this.setState({ category: res.data });
     });
+
+    
   }
 
   render(){

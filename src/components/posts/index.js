@@ -52,7 +52,7 @@ class Posts extends Component{
         />);
 
         return (
-            <div>
+            <div id="posts-cover">
                 <div id="posts">
                 <Tag getPostsByTag={this.getPostsByTag} />
                 {arrPosts}

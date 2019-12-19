@@ -12,7 +12,6 @@ import callAPI  from '../utils/callAPI';
  * Fetch posts after calling API 
  */
 export const appendPostsRequest = (pid,tag) => {
-    console.log("API Action",pid,tag);
     return (dispatch) => {
         return callAPI(`GetPostsNewsFeed.php?crid=${pid}&tagid=${tag}`,'GET',null).then(res => { 
             dispatch(appendPosts(res.data));

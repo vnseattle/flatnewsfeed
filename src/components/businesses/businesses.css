@@ -15,14 +15,33 @@
     height: 100vh;
 }
 
-#businesses__detail{
-    width: 50%;
-    height: 100vh;
-    flex-shrink: 1;
-}
 
 #businesses__business{
     flex-shrink: 1;
     margin-left: 200px;
-    max-width: 600px;
+    width: 300px;
+}
+
+#businesses__detail{
+    padding-top:15px;
+    width: 500px;
+    height: 100vh;
+    flex-shrink: 1;
+    position: fixed;
+    margin-left: 500px;
+}
+
+
+#businesses__detail__info{
+    padding: 10px;
+    font-family: arial;
+    margin: 10px;
+    background: white;
+    border-radius: 2%;
+}
+
+
+#businesses__detail__info img{
+    width: 450px;
+    border-radius: 2px;
 }

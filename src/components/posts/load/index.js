@@ -23,9 +23,7 @@ class Load extends Component{
             isScrolled: false,
             tagID:'0'
         };
-        window.addEventListener('scroll',(e) => {
-            this.handleScroll();
-        });
+        window.addEventListener('scroll',this.handleScroll);
     }
 
     // Set scrolling status 
@@ -51,17 +49,20 @@ class Load extends Component{
     // Handle the scrolling 
     handleScroll = () => {
         var {isScrolled} = this.state;
+        
+        if (this._isMounted) {
+            // Hit the bottom, start to load more 
+            if(getScrolled()>=95 && !isScrolled){
+                this.setScrolled(true); // disable the scrolling 
+                this.loadMore();
+            }
 
-        // Hit the bottom, start to load more 
-        if(getScrolled()>=95 && !isScrolled){
-            this.setScrolled(true); // disable the scrolling 
-            this.loadMore();
+            // Re-active the scrolling again 
+            if(getScrolled()>75  && isScrolled){
+                this.setScrolled(false);
+            }
         }
-
-        // Re-active the scrolling again 
-        if(getScrolled()>75  && isScrolled){
-            this.setScrolled(false);
-        }
+        
     }
 
     // Load more posts 
