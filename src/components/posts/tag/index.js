@@ -11,7 +11,7 @@ import IconFirework from "./../../../assets//icons/confetti.png";
 import IconSocial from "./../../../assets//icons/social-media.png";
 import callAPI from './../../../utils/callAPI';
 import { connect } from 'react-redux';
-import { updateListPosts } from './../../../actions/index';
+import { updateListPosts } from './../../../actions/posts';
 import './tag.css';
 
 class Tag extends Component{

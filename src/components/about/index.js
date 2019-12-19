@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-class Menu extends Component{
+class About extends Component{
 
     render(){
        
         return (
             <div>
-                About Page 
+                 <div><h1>Display About</h1></div>
             </div>
             
         )
@@ -15,4 +15,4 @@ class Menu extends Component{
 
 
 
-export default Menu;
+export default About;

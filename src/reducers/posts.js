@@ -1,7 +1,7 @@
 /*********************************************************
- * REDUCERS 
+ * REDUCER - POSTS 
  * Author: Henry Ng - Dec 18, 2019
- * The reducers that relate to the posts which are displayed
+ * The reducer that relate to the posts which are displayed
  * on the news feed
  *********************************************************/
 import * as types from '../constants/PostsActionType';

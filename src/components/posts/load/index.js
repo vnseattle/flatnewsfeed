@@ -6,7 +6,7 @@
  ********************************************/
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { appendPostsRequest, updateListPosts } from '../../../actions/index';
+import { appendPostsRequest, updateListPosts } from '../../../actions/posts';
 import getScrolled from '../../../utils/getScrolled';
 import './load.css';
 

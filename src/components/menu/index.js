@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Posts from './../posts/';
-import About from './../about/';
+import Businesses from './../businesses/index';
 import SearchIcon from './../../assets/icons/search.png';
 import callAPI from './../../utils/callAPI';
-import {updateListPosts} from './../../actions/index';
+import {updateListPosts} from './../../actions/posts';
 import { connect } from 'react-redux';
 
 import './menu.css';
@@ -47,8 +47,8 @@ class Menu extends Component{
                 <div>
                     <div className="menu-cover">
                         <div className="topnav">
-                            <Link to="/">Home</Link>
-                            <Link to="/about">About</Link>
+                            <a href="/">Home</a>
+                            <a href="/business">Business</a>
                             <div className="search-container">
                                 <form  onSubmit={this.handleSubmit}>
                                     <input type="text" placeholder="Search.." name="search"  onChange={this.handleInputChange}/>
@@ -58,7 +58,7 @@ class Menu extends Component{
                         </div>
                     </div>
                     <Route path="/" exact component={Posts} />
-                    <Route path="/about" exact component={About} />
+                    <Route path="/business"  component={Businesses} />
 
                 </div>
                 </Router>

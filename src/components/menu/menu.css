@@ -12,7 +12,7 @@
 .topnav {
     display: flex;
     flex-direction: row;
-    width: 900px;
+    width: 1000px;
 }
   
 .topnav a {

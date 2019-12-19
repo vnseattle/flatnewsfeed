@@ -5,11 +5,11 @@
  * You send them to the store using store. dispatch()
  * Author: Henry Ng - Dec 18, 2019
  *********************************************************/
-import * as types from './../constants/PostsActionType';
-import callAPI  from './../utils/callAPI';
+import * as types from '../constants/PostsActionType';
+import callAPI  from '../utils/callAPI';
 
 /**
- * Appends posts after call API 
+ * Fetch posts after calling API 
  */
 export const appendPostsRequest = (pid,tag) => {
     console.log("API Action",pid,tag);

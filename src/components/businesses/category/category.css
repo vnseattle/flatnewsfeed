@@ -1,0 +1,29 @@
+.business__category{
+    width: 180px;
+    margin-top: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    background-color: #f4f4f4;
+    color: black;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 16px;
+
+}
+
+.business__category:hover{
+    background-color: #eee;
+}
+
+.business__category:first-child{
+    margin-top: 25px;
+    
+}
+
+.business__category__label{
+    margin-left: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}

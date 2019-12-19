@@ -1,0 +1,28 @@
+#businesses{
+    margin: auto;
+    padding-top: 45px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+#businesses__category{
+    min-width: 200px;
+    position: fixed;
+    height: 100vh;
+}
+
+#businesses__detail{
+    width: 50%;
+    height: 100vh;
+    flex-shrink: 1;
+}
+
+#businesses__business{
+    flex-shrink: 1;
+    margin-left: 200px;
+    max-width: 600px;
+}

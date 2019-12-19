@@ -1,0 +1,34 @@
+.businesses__business{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font-family: arial;
+  display: flex;
+  margin: 10px;
+  background: white;
+}
+
+.businesses__business:first-child{
+  margin-top: 25px;
+}
+
+.businesses__business__img{
+  width: 100%;
+}
+
+.businesses__business__img img{
+  width: 100%;
+}
+
+.businesses__business__info{
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+}
+
+
+
+
+
+
+

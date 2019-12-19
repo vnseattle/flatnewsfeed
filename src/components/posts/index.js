@@ -8,7 +8,7 @@
 import React, { Component } from 'react'
 import Post from './post/index';
 import { connect } from 'react-redux';
-import { appendPostsRequest } from './../../actions/index';
+import { appendPostsRequest } from './../../actions/posts';
 import LoadMore from './load/';
 import Tag from './tag/';
 import './posts.css';

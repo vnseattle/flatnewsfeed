@@ -6,11 +6,13 @@
  * into a single reducing function you can pass to createStore.
  *********************************************************/
 import { combineReducers } from 'redux';
+import businesses from './businesses';
 import posts from './posts';
 
 /**
  * Right now we only have posts to combie 
  */
 export default combineReducers({
+    businesses,
     posts
 });
