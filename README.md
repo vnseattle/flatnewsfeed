@@ -58,9 +58,9 @@ Posts – Where to displays Posts
 
 <img src='http://vnseattle.com/vnsmarket-design/posts-page-redux.png' />
 
-* appendPostsRequest: fetch new posts from API 
-* appendPosts: adding new posts to posts in Redux Store
-* updateListPosts: update all posts in the Redux Store 
+* appendPostsRequest: fetchs new posts from API 
+* appendPosts: adds new posts to posts in Redux Store
+* updateListPosts: updates all posts in the Redux Store 
 
 #### APIs
 
@@ -77,6 +77,37 @@ Posts – Where to displays Posts
 | Post | http://vnseattle.com/vnsapp/GetPost.php?id=935
 
 ### Businesses page 
+
+#### Layout
+<img src='http://vnseattle.com/vnsmarket-design/businesses-page-layout.png'>
+
+Posts – Where to displays Posts
+1. Category - category listing.
+2. Businesses - Businesses listing.
+3. Quickview  - giving users a quick preview of the business right from its respective category listing.
+
+#### Structure
+
+<img src='http://vnseattle.com/vnsmarket-design/posts-page-redux.png' />
+
+* fetchBusinessesRequest: fetchs new businesses from API 
+* updateBusinesses: updates all businesses in the Redux Store 
+
+#### APIs
+
+| GET | API | NOTE |
+| ------ | ------ | ----- |
+| Category | [HOST]/GetCat.php | Category listing
+| Businesses | [HOST]GetAdsNewsFeed.php?crid=0&catid=0 | List of ten businesses from the businesses 
+| Business | [HOST]GetBus.php?id=473 |  The detail of each business when the user 'mouseover' to the div.
+
+#### API exmaples 
+
+| GET | API |
+| ------ | ------ |
+| Category | http://vnseattle.com/vnsapp/GetCat.php
+| Businesses | http://vnseattle.com/vnsapp/GetAdsNewsFeed.php?crid=0&catid=0
+|Business|http://vnseattle.com/vnsapp/GetBus.php?id=473 
 
 
 ### Installation
