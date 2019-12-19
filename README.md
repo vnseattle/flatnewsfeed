@@ -10,7 +10,9 @@ This feature is a part of the Advertising Board of VNSeattle. It will display po
   2. Click to view detail
   3. Infinity scroll
   4. Filter
-  5. Search bar
+  5. Search bar for newsfeed
+  6. Business page to find businesses
+  7. Quick-view hover   
  
 ### Tech & License 
 
@@ -23,8 +25,9 @@ Flat Newsfeed uses a number of Javascript library to work properly:
 * Redux-Thunk - Middleware manage asynchronouse actions.
 
 ### Overview
+
 #### Layout
-<img src='http://vnseattle.com/vnsmarket-design/home-overview-layout.png'/>
+<img src='http://vnseattle.com/vnsmarket-design/newsfeed-overview.png'/>
 
 Posts – Where to displays Posts
 1. Tags - fillter buttons for loading posts by a tag
@@ -37,8 +40,9 @@ Posts – Where to displays Posts
 3. Load – the button to load more posts (includes an infinity scroll)    
 
 #### Structure
+
 Based on the Redux Structure 
-<img src='http://vnseattle.com/vnsmarket-design/structure-redux.png' />
+<img src='https://www.esri.com/arcgis-blog/wp-content/uploads/2017/09/react-redux-overview.png' />
 
 * Actions: to store activities that are used by the dispatcher.
 * Reducers: to store the reducer who works in the store.
@@ -46,7 +50,10 @@ Based on the Redux Structure
 * Constants: to store constants variable.
 * Utils: to store standard functions which will be used repetitively during the development. 
 
-### APIs
+### Newsfeed ( Home ) page 
+<img src='http://vnseattle.com/vnsmarket-design/posts-page-redux.png' />
+
+#### APIs
 
 | GET | API | NOTE |
 | ------ | ------ | ----- |
@@ -58,6 +65,9 @@ Based on the Redux Structure
 | ------ | ------ |
 | Posts | http://vnseattle.com/vnsapp/GetPostsNewsFeed.php?crid=0&tagid=0
 | Post | http://vnseattle.com/vnsapp/GetPost.php?id=935
+
+### Businesses page 
+
 
 ### Installation
 
