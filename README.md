@@ -56,7 +56,7 @@ Posts – Where to displays Posts
 
 #### Structure
 
-<img src='http://vnseattle.com/vnsmarket-design/posts-page-redux2.png' />
+<img src='http://vnseattle.com/vnsmarket-design/posts-page-redux3.png' />
 
 * appendPostsRequest: fetchs new posts from API 
 * appendPosts: adds new posts to posts in Redux Store
