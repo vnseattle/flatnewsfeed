@@ -8,6 +8,10 @@
   background: white;
 }
 
+.businesses__business__title{
+  max-width: 250px;
+}
+
 .businesses__business:first-child{
   margin-top: 25px;
 }

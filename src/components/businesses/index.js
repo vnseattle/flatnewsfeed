@@ -26,7 +26,8 @@ class Businesses extends Component{
         Phone:'',
         Email:'',
         Message:''
-      }]
+      }],
+      gallery:[]
     }
 
     // Start to get default business 
@@ -40,22 +41,46 @@ class Businesses extends Component{
    * Return a json data 
    */
   getDetail = (id) =>{
-    callAPI(`GetBus.php?id=${id}`,'GET',null).then(res => { 
-        //console.log(res.data);
+
+    // get detail data 
+    callAPI(`GetBus.php?id=${id}`).then(res => { 
         this.setState({ detail: res.data });
     });
+
+    // get images gallery 
+    callAPI(`GetImages.php?tb=2&id=${id}`).then(res => { 
+      this.setState({ gallery: res.data });
+    });
+
+  }
+
+  // change the thumb by image gallery 
+  changeThumb = (ImageLink) => {
+    document.getElementById("businesses__detail__thumb").src = ImageLink;
+  }
+
+  // back to the normal thumb 
+  backThumb = () => {
+    document.getElementById("businesses__detail__thumb").src = this.state.detail[0].Thumb;
   }
 
   
   render(){
     // Business
     var {businesses} = this.props;
-    var {detail} = this.state;
-    var msg = detail[0].Message;
+    var {detail,gallery} = this.state;
     
+
     // solve the <br/> tag problems in user message 
+    var msg = detail[0].Message;
     msg = msg.split('<br/>').map( (item, key) => <span key={key}>{item}<br/></span>);
-    var businessesCards = businesses.map(business => <Business key={business.Id} id={business.Id} intro={business.Intro} image={business.Thumb} getDetail={this.getDetail} />)
+    var businessesCards = businesses.map((business,i) => <Business key={business.Id} id={business.Id} intro={business.Intro} image={business.Thumb} getDetail={this.getDetail} />)
+
+    // Gallery render 
+    var images = gallery.map((image,i) => <div key={image.Id} 
+    onMouseEnter={()=> this.changeThumb(image.ImageLink)} 
+    onMouseLeave={()=> this.backThumb()} 
+    className='gallery__imgs'><img key={image.Id} src={image.ImageLink} /></div>);
 
     return (
       <div id='businesses'>
@@ -67,7 +92,11 @@ class Businesses extends Component{
           </div>
           <div id='businesses__detail'>
             <div id='businesses__detail__info'>
-             <div><img src={detail[0].Thumb} alt={detail[0].Intro}/></div>
+            { gallery.length < 1 ? '' : <div id='businesses__detail__gallery'>
+                {images}
+             </div>}
+             <div><img id='businesses__detail__thumb' src={detail[0].Thumb} alt={detail[0].Intro}/></div>
+
              <div>{detail[0].Intro}</div>
              <div>{detail[0].Address}</div>
              <div>{msg}</div>

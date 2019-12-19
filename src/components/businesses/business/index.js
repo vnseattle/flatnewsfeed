@@ -24,7 +24,7 @@ class Business extends Component{
             </div>
 
             <div className='businesses__business__info'>
-                <div className='title'>{intro}</div>
+                <div className='businesses__business__title'>{intro}</div>
             </div>
         </div>
     )
