@@ -9,6 +9,10 @@ import './category.css';
 
 class CategoryItem extends Component{
 
+  /**
+   * Call Action when user change the category
+   * @param {string} CatID: the category ID
+   */
   changeCategory = (catID) =>{
     this.props.fetchBusiness({id:'0',cat:catID});
   }
@@ -23,7 +27,7 @@ class CategoryItem extends Component{
   }
 }
 
-
+// No need to map the state
 const mapDispatchToProps = (dispatch) => {
     return {
       fetchBusiness: (config) => {

@@ -9,22 +9,23 @@ import './category.css';
 
 class Category extends Component{
 
+  // Default state 
   constructor(props){
     super(props);
     this.state = {
       category:[]
     }
+
+    // Start with full list of category 
     callAPI(`GetCat.php`,'GET',null).then(res => { 
         this.setState({ category: res.data });
     });
 
-    
   }
 
   render(){
     var {category} = this.state;
     let catItems = category.map(item => <CategoryItem key={item.CatID} catID={item.CatID} label={item.CatName} />);
-
     return (
       <div>
          {catItems}

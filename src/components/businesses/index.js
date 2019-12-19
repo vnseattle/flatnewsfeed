@@ -1,5 +1,6 @@
 /**
- * BUSINESSES  
+ * BUSINESSES  LAYOUT
+ * Includes: Business, Category, Quickview
  * Author: Henry Ng - Dec 18, 2019
  */
 import React, { Component } from 'react';
@@ -14,6 +15,7 @@ import './businesses.css';
 
 class Businesses extends Component{
 
+  // Default State 
   constructor(props){
     super(props);
     this.state = {
@@ -27,10 +29,9 @@ class Businesses extends Component{
       }]
     }
 
-    var config = { id:'0', tag:'33'}; // default for market
+    // Start to get default business 
+    var config = { id:'0', tag:'33'}; // markets
     this.props.fetchInitBusinesses(config);
-
-    
 
   }
 
@@ -47,9 +48,12 @@ class Businesses extends Component{
 
   
   render(){
+    // Business
     var {businesses} = this.props;
     var {detail} = this.state;
     var msg = detail[0].Message;
+    
+    // solve the <br/> tag problems in user message 
     msg = msg.split('<br/>').map( (item, key) => <span key={key}>{item}<br/></span>);
     var businessesCards = businesses.map(business => <Business key={business.Id} id={business.Id} intro={business.Intro} image={business.Thumb} getDetail={this.getDetail} />)
 
