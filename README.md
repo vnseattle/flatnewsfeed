@@ -1,10 +1,12 @@
 # Flat Newsfeed
 
-This feature is a part of the Advertising Board of VNSeattle Page. It will display posts, business contacts that are fetched by APIs provided by the VnSeattle server/
+This feature is a part of the Advertising Board of VNSeattle Page. It will display posts, business contacts that are fetched by APIs provided by the VnSeattle server.
 
 # Live Demo
-
 [Live Demo Flat NewsFeed - click here](https://master.d2tb1gog3fr3bu.amplifyapp.com/)
+
+<img src='http://vnseattle.com/vnsmarket-design/screenshots1.png' />
+
 
 # Features!
 
