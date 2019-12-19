@@ -63,8 +63,8 @@ class Menu extends Component{
                 <div>
                     <div className="menu-cover">
                         <div className="topnav">
-                            <a onClick={()=>this.menuControl(0)}>Home</a>
-                            <a onClick={()=>this.menuControl(1)}>Business</a>
+                            <div className="topnav__button" onClick={()=>this.menuControl(0)}>Home</div>
+                            <div className="topnav__button" onClick={()=>this.menuControl(1)}>Business</div>
                             <div className="search-container">
                                 <form  onSubmit={this.handleSubmit}>
                                     <input type="text" placeholder="Search.." name="search"  onChange={this.handleInputChange}/>

@@ -40,7 +40,7 @@ class Businesses extends Component{
    */
   getDetail = (id) =>{
     callAPI(`GetBus.php?id=${id}`,'GET',null).then(res => { 
-        console.log(res.data);
+        //console.log(res.data);
         this.setState({ detail: res.data });
     });
   }
