@@ -5,7 +5,7 @@ This feature is a part of the Advertising Board of VNSeattle Page. It will displ
 # Live Demo
 [Live Demo Flat NewsFeed - click here](https://master.d2tb1gog3fr3bu.amplifyapp.com/)
 
-<img src='http://vnseattle.com/vnsmarket-design/screenshots1.png' />
+<img src='http://vnseattle.com/vnsmarket-design/sreenshots1.jpg' />
 
 
 # Features!
