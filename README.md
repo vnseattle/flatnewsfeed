@@ -18,6 +18,7 @@ This feature is a part of the Advertising Board of VNSeattle Page. It will displ
   6. Business page to find businesses
   7. Quick-view hover   
   8. Images gallery 
+  9. Search bar for businesses
  
 ### Tech & License 
 
