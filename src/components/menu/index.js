@@ -75,10 +75,16 @@ class Menu extends Component{
 
         // Routers 
         var activeMenu = <Posts />;
+        // Remove all disable search
+        var disabledSearch = document.querySelector('.disabled');
+        if(disabledSearch!==null){
+            disabledSearch.classList.remove('disabled');
+        }
         if(this.state.menu === 1 ){
             activeMenu = <Businesses />;
         } if(this.state.menu === 2 ){
             activeMenu = <Classifieds />;
+            document.querySelector('.search-container input').classList.add('disabled');
         }
 
         return (
