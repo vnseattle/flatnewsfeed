@@ -1,0 +1,29 @@
+#classifieds{
+    margin: auto;
+    padding-top: 75px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.classifieds__classified--column{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.classifieds__classified--item{
+    margin-top: 10px;
+    width: 80%;
+    background-color: white;
+    padding:10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+}
